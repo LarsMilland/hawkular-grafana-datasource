@@ -20,7 +20,7 @@ RUN curl -L https://grafana.com/api/plugins/raintank-kubernetes-app/versions/0.0
     unzip hawkular-kubernetes.zip && \
     rm hawkular-kubernetes.zip && \
     mkdir -p /var/lib/grafana/plugins/hawkular-kubernetes && \
-    mv hawkular-kubernetes /var/lib/grafana/plugins/hawkular-kubernetes
+    mv grafana-kubernetes-app-c1a3834 /var/lib/grafana/plugins/hawkular-kubernetes
 
 # Fix permissions so will run on OCP under "restricted" SCC
 COPY ./run.sh /run.sh
