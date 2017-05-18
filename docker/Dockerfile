@@ -13,9 +13,9 @@ RUN curl -L https://github.com/hawkular/hawkular-grafana-datasource/archive/rele
     unzip hawkular-grafana-datasource-release.zip && \
     rm hawkular-grafana-datasource-release.zip && \
     mkdir -p /var/lib/grafana/plugins/hawkular-datasource && \
-    mv hawkular-grafana-datasource-release /var/lib/grafana/plugins/hawkular-datasource# Install hawkular-grafana-datasource latest github release
-
-
+    mv hawkular-grafana-datasource-release /var/lib/grafana/plugins/hawkular-datasource
+    
+# Install raintank-kubernetes-app release
 RUN curl -L https://grafana.com/api/plugins/raintank-kubernetes-app/versions/0.0.7/download -o hawkular-kubernetes.zip && \
     unzip hawkular-kubernetes.zip && \
     rm hawkular-kubernetes.zip && \
