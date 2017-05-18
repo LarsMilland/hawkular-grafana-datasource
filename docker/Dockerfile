@@ -13,7 +13,14 @@ RUN curl -L https://github.com/hawkular/hawkular-grafana-datasource/archive/rele
     unzip hawkular-grafana-datasource-release.zip && \
     rm hawkular-grafana-datasource-release.zip && \
     mkdir -p /var/lib/grafana/plugins/hawkular-datasource && \
-    mv hawkular-grafana-datasource-release /var/lib/grafana/plugins/hawkular-datasource
+    mv hawkular-grafana-datasource-release /var/lib/grafana/plugins/hawkular-datasource# Install hawkular-grafana-datasource latest github release
+
+
+RUN curl -L https://grafana.com/api/plugins/raintank-kubernetes-app/versions/0.0.7/download -o hawkular-kubernetes.zip && \
+    unzip hawkular-kubernetes.zip && \
+    rm hawkular-kubernetes.zip && \
+    mkdir -p /var/lib/grafana/plugins/hawkular-kubernetes && \
+    mv hawkular-kubernetes /var/lib/grafana/plugins/hawkular-kubernetes
 
 # Fix permissions so will run on OCP under "restricted" SCC
 COPY ./run.sh /run.sh
